@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
+/* ── Light mode (default) ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-base:        #f8f6f0;
+  --bg-surface:     #ede6f5;
+  --bg-raised:      #ffffff;
+  --border:         #ddd0ee;
+  --border-strong:  #bfa6e8;
+  --text-primary:   #3f3f3f;
+  --text-muted:     #6b5d7a;
+  --text-faint:     #a898b8;
+  --lavender:       #4a1f5e;
+  --lavender-hover: #3a1749;
+  --lavender-light: #bfa6e8;
+  --lavender-dim:   rgba(74, 31, 94, 0.10);
+  --gold:           #c6a75e;
+  --gold-hover:     #b5943f;
+  --gold-dim:       rgba(198, 167, 94, 0.15);
+  --mauve:          #8e7aae;
+  --mauve-hover:    #7d6a9d;
+  --mauve-dim:      rgba(142, 122, 174, 0.15);
+  --glow-1:         rgba(74, 31, 94, 0.07);
+  --glow-2:         rgba(191, 166, 232, 0.12);
+}
+
+/* ── Dark mode ── */
+[data-theme="dark"] {
+  --bg-base:        #1a0d24;
+  --bg-surface:     #220f30;
+  --bg-raised:      #2d1340;
+  --border:         #3d2050;
+  --border-strong:  #5a3070;
+  --text-primary:   #f0ebf8;
+  --text-muted:     #c0aed8;
+  --text-faint:     #7a5f8a;
+  --lavender:       #bfa6e8;
+  --lavender-hover: #d4c4f0;
+  --lavender-light: #bfa6e8;
+  --lavender-dim:   rgba(191, 166, 232, 0.15);
+  --gold:           #d4b96e;
+  --gold-hover:     #e8cc82;
+  --gold-dim:       rgba(212, 185, 110, 0.20);
+  --mauve:          #8e7aae;
+  --mauve-hover:    #a090c4;
+  --mauve-dim:      rgba(142, 122, 174, 0.20);
+  --glow-1:         rgba(74, 31, 94, 0.25);
+  --glow-2:         rgba(191, 166, 232, 0.10);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-base);
+  color: var(--text-primary);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
 }
