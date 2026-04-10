@@ -247,9 +247,12 @@ export default function KlosetSite() {
       {/* ── NAV ── */}
       <header style={{ background: "var(--bg-base)", borderBottom: "1px solid var(--border)" }} className="fixed top-[34px] left-0 right-0 z-50 backdrop-blur-md bg-opacity-90">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <button onClick={() => scrollTo("hero")} className="text-xl font-semibold tracking-tight">
-            <span style={{ color: "var(--lavender-light)" }}>Kae&apos;s</span>{" "}
-            <span style={{ color: "var(--text-primary)" }}>Kloset</span>
+          <button onClick={() => scrollTo("hero")} className="flex items-center">
+            <img
+              src={dark ? "/logo-gold.png" : "/logo-lavender.png"}
+              alt="Kae's Kloset"
+              className="h-10 w-auto"
+            />
           </button>
 
           {/* Desktop nav */}
@@ -319,10 +322,23 @@ export default function KlosetSite() {
         <div className="absolute top-[55%] right-[10%] pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.25, fontSize: "1rem" }}>◈</div>
         <div className="absolute bottom-[28%] left-[8%] pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.18, fontSize: "0.65rem" }}>✦</div>
 
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          className="mb-8"
+        >
+          <img
+            src={dark ? "/logo-gold.png" : "/logo-lavender.png"}
+            alt="Kae's Kloset"
+            className="h-36 md:h-48 w-auto mx-auto"
+          />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="text-sm tracking-[0.2em] uppercase mb-6"
           style={{ color: "var(--gold)" }}
         >
@@ -833,9 +849,11 @@ export default function KlosetSite() {
       <footer style={{ borderTop: "1px solid var(--border)", background: "var(--bg-base)" }} className="px-6 py-10">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
           <div className="text-center md:text-left">
-            <p className="text-base font-semibold mb-1" style={{ color: "var(--text-primary)" }}>
-              <span style={{ color: "var(--lavender-light)" }}>Kae&apos;s</span> Kloset
-            </p>
+            <img
+              src={dark ? "/logo-gold.png" : "/logo-lavender.png"}
+              alt="Kae's Kloset"
+              className="h-16 w-auto mx-auto md:mx-0 mb-2"
+            />
             <p className="text-xs" style={{ color: "var(--text-faint)" }}>A Kustom store with a Kustomizable experience.</p>
           </div>
 
