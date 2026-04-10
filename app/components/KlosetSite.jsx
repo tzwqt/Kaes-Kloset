@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Script from "next/script";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -43,7 +44,7 @@ const services = [
 
 const koreValues = [
   {
-    title: "Confidence",
+    title: "Konfidence",
     description: "Every client walks out feeling like the best version of themselves — inside and out.",
     icon: "✦",
   },
@@ -168,7 +169,7 @@ function ThemeToggle({ dark, onToggle }) {
 // ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
 
 export default function KlosetSite() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const [formData, setFormData] = useState({
     name: "", dob: "", age: "", email: "", phone: "",
     sizeTop: "", sizeBottom: "", sizeDress: "", sizeShoe: "",
@@ -197,9 +198,9 @@ export default function KlosetSite() {
     document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
   }, [dark]);
 
-  // Initialize to light on mount
+  // Initialize to dark on mount
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-theme", "dark");
   }, []);
 
   function scrollTo(id) {
@@ -234,11 +235,11 @@ export default function KlosetSite() {
       {/* ── ANNOUNCEMENT STRIP ── */}
       <div
         className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-center gap-3 py-2 text-[11px] tracking-[0.18em] uppercase overflow-hidden"
-        style={{ background: "var(--lavender)", color: "#fff" }}
+        style={{ background: "var(--lavender)", color: "#fff", borderBottom: "1px solid var(--gold)", boxShadow: "0 1px 0 0 var(--gold)" }}
       >
         <span style={{ color: "var(--gold)" }}>✦</span>
         <span>Now Featuring: Lavender Luxe Looks</span>
-        <span style={{ color: "var(--gold)", opacity: 0.6 }}>·</span>
+        <span style={{ color: "var(--gold)", opacity: 0.8 }}>✦</span>
         <span style={{ opacity: 0.75 }}>Golden Hour Glam Coming This Month</span>
         <span style={{ color: "var(--gold)" }}>✦</span>
       </div>
@@ -312,6 +313,11 @@ export default function KlosetSite() {
       <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-[calc(5rem+34px)] overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none" style={{ background: "var(--glow-1)" }} />
         <div className="absolute bottom-1/3 left-1/4 w-[300px] h-[300px] rounded-full blur-[100px] pointer-events-none" style={{ background: "var(--glow-2)" }} />
+        {/* Gold sparkle accents */}
+        <div className="absolute top-[22%] left-[12%] pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.35, fontSize: "1.5rem" }}>✦</div>
+        <div className="absolute top-[18%] right-[16%] pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.2, fontSize: "0.75rem" }}>✦</div>
+        <div className="absolute top-[55%] right-[10%] pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.25, fontSize: "1rem" }}>◈</div>
+        <div className="absolute bottom-[28%] left-[8%] pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.18, fontSize: "0.65rem" }}>✦</div>
 
         <motion.p
           initial={{ opacity: 0, y: 12 }}
@@ -384,9 +390,9 @@ export default function KlosetSite() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <FadeUp delay={0.1}>
-              <div style={card} className="rounded-2xl p-8 h-full">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center mb-5" style={{ background: "var(--lavender-dim)" }}>
-                  <span style={{ color: "var(--lavender-light)" }} className="text-lg">◈</span>
+              <div style={{ ...card, borderTop: "2px solid var(--gold)" }} className="rounded-2xl p-8 h-full">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center mb-5" style={{ background: "var(--gold-dim)" }}>
+                  <span style={{ color: "var(--gold)" }} className="text-lg">◈</span>
                 </div>
                 <h3 className="text-lg font-semibold mb-4" style={{ color: "var(--lavender-light)" }}>Our Mission</h3>
                 <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
@@ -396,9 +402,9 @@ export default function KlosetSite() {
             </FadeUp>
 
             <FadeUp delay={0.2}>
-              <div style={card} className="rounded-2xl p-8 h-full">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center mb-5" style={{ background: "var(--lavender-dim)" }}>
-                  <span style={{ color: "var(--lavender-light)" }} className="text-lg">✦</span>
+              <div style={{ ...card, borderTop: "2px solid var(--gold)" }} className="rounded-2xl p-8 h-full">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center mb-5" style={{ background: "var(--gold-dim)" }}>
+                  <span style={{ color: "var(--gold)" }} className="text-lg">✦</span>
                 </div>
                 <h3 className="text-lg font-semibold mb-4" style={{ color: "var(--lavender-light)" }}>Our Vision</h3>
                 <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
@@ -420,18 +426,38 @@ export default function KlosetSite() {
             </h2>
           </FadeUp>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {koreValues.map((v, i) => (
-              <FadeUp key={i} delay={i * 0.08}>
-                <div style={card} className="rounded-2xl p-7 h-full">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center mb-5" style={{ background: "var(--lavender-dim)" }}>
-                    <span style={{ color: "var(--lavender-light)" }} className="text-lg">{v.icon}</span>
+          <div className="grid grid-cols-1 sm:grid-cols-6 gap-6">
+            {/* Row 1 — 3 values */}
+            {koreValues.slice(0, 3).map((v, i) => (
+              <FadeUp key={i} delay={i * 0.08} className="sm:col-span-2">
+                <div style={{ ...card, borderTop: "2px solid var(--gold)" }} className="rounded-2xl p-7 h-full">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mb-5" style={{ background: "var(--gold-dim)" }}>
+                    <span style={{ color: "var(--gold)" }} className="text-lg">{v.icon}</span>
                   </div>
                   <h3 className="font-semibold text-base mb-3" style={{ color: "var(--text-primary)" }}>{v.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{v.description}</p>
                 </div>
               </FadeUp>
             ))}
+            {/* Row 2 — 2 values centered */}
+            <FadeUp key={3} delay={3 * 0.08} className="sm:col-span-2 sm:col-start-2">
+              <div style={{ ...card, borderTop: "2px solid var(--gold)" }} className="rounded-2xl p-7 h-full">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center mb-5" style={{ background: "var(--gold-dim)" }}>
+                  <span style={{ color: "var(--gold)" }} className="text-lg">{koreValues[3].icon}</span>
+                </div>
+                <h3 className="font-semibold text-base mb-3" style={{ color: "var(--text-primary)" }}>{koreValues[3].title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{koreValues[3].description}</p>
+              </div>
+            </FadeUp>
+            <FadeUp key={4} delay={4 * 0.08} className="sm:col-span-2">
+              <div style={{ ...card, borderTop: "2px solid var(--gold)" }} className="rounded-2xl p-7 h-full">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center mb-5" style={{ background: "var(--gold-dim)" }}>
+                  <span style={{ color: "var(--gold)" }} className="text-lg">{koreValues[4].icon}</span>
+                </div>
+                <h3 className="font-semibold text-base mb-3" style={{ color: "var(--text-primary)" }}>{koreValues[4].title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{koreValues[4].description}</p>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -446,43 +472,65 @@ export default function KlosetSite() {
             </h2>
           </FadeUp>
 
-          <div className="flex flex-col md:flex-row gap-10 items-center">
-            <FadeUp delay={0.1} className="w-full md:w-auto flex-shrink-0">
-              <div style={card} className="w-64 h-72 mx-auto rounded-2xl flex flex-col items-center justify-center gap-3">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: "var(--lavender-dim)" }}>
-                  <PersonIcon />
+          <div className="flex flex-col gap-10">
+
+            {/* ── Welcome Video ── */}
+            <FadeUp delay={0.1}>
+              {/* TODO: Replace this placeholder with an <iframe> embed once Kaelyn shares her video link */}
+              <div
+                style={{ ...card, borderTop: "2px solid var(--gold)", position: "relative", overflow: "hidden" }}
+                className="w-full rounded-2xl aspect-video flex items-center justify-center"
+              >
+                <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, var(--bg-raised) 60%, var(--lavender-dim))" }} />
+                {/* Decorative corner sparkles */}
+                <span className="absolute top-4 left-5 text-sm pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.4 }}>✦</span>
+                <span className="absolute bottom-4 right-5 text-xs pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.3 }}>◈</span>
+                <div className="relative flex flex-col items-center gap-4">
+                  <div
+                    className="w-16 h-16 rounded-full flex items-center justify-center"
+                    style={{ background: "var(--gold)", boxShadow: "0 0 32px var(--gold-dim)" }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                  </div>
+                  <p className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>Welcome from Kaelyn</p>
+                  <p className="text-xs tracking-[0.15em] uppercase" style={{ color: "var(--text-faint)" }}>Video coming soon</p>
                 </div>
-                <span className="text-xs text-center px-4" style={{ color: "var(--text-faint)" }}>Headshot coming soon</span>
               </div>
             </FadeUp>
 
-            <FadeUp delay={0.2} className="flex-1">
-              <h3 className="text-2xl font-semibold mb-1" style={{ color: "var(--text-primary)" }}>Kaelyn Charles</h3>
-              <p className="text-sm tracking-wide mb-6" style={{ color: "var(--lavender-light)" }}>Founder &amp; Owner · Kae&apos;s Kloset</p>
-              <p className="leading-relaxed mb-6" style={{ color: "var(--text-muted)" }}>
-                Kaelyn Charles is more than a stylist — she is an answered prayer to every client she serves. With an eye for detail, a heart for people, and a gift for transformation, Kaelyn built Kae&apos;s Kloset on the belief that every person is &ldquo;fearfully and wonderfully made.&rdquo;
-              </p>
-              <p className="leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
-                From curated outfit sessions to full boutique experiences, she approaches every engagement as a calling — not just a service. Her boutique is a space where confidence, creativity, and individuality are always celebrated.
-              </p>
-              <div className="flex flex-wrap gap-4 text-sm" style={{ color: "var(--text-muted)" }}>
-                <a href="mailto:kaeskustomkloset@gmail.com" className="flex items-center gap-2 transition-colors" style={{ color: "var(--text-muted)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}>
-                  ✉ kaeskustomkloset@gmail.com
-                </a>
-                <a href="tel:8327752279" className="flex items-center gap-2 transition-colors" style={{ color: "var(--text-muted)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}>
-                  📱 (832) 775-2279
-                </a>
-                <a href="https://instagram.com/kaesk_loset" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 transition-colors" style={{ color: "var(--text-muted)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}>
-                  📸 @kaesk_loset
-                </a>
+            {/* ── Bio ── */}
+            <FadeUp delay={0.2} className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="flex-1">
+                <h3 className="text-2xl font-semibold mb-1" style={{ color: "var(--text-primary)" }}>Kaelyn Charles</h3>
+                <p className="text-sm tracking-wide mb-6" style={{ color: "var(--lavender-light)" }}>Founder &amp; Owner · Kae&apos;s Kloset</p>
+                <p className="leading-relaxed mb-6" style={{ color: "var(--text-muted)" }}>
+                  Kaelyn Charles is more than a stylist — she is an answered prayer to every client she serves. With an eye for detail, a heart for people, and a gift for transformation, Kaelyn built Kae&apos;s Kloset on the belief that every person is &ldquo;fearfully and wonderfully made.&rdquo;
+                </p>
+                <p className="leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
+                  From curated outfit sessions to full boutique experiences, she approaches every engagement as a calling — not just a service. Her boutique is a space where confidence, creativity, and individuality are always celebrated.
+                </p>
+                <div className="flex flex-wrap gap-4 text-sm" style={{ color: "var(--text-muted)" }}>
+                  <a href="mailto:kaeskustomkloset@gmail.com" className="flex items-center gap-2 transition-colors" style={{ color: "var(--text-muted)" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}>
+                    ✉ kaeskustomkloset@gmail.com
+                  </a>
+                  <a href="tel:8327752279" className="flex items-center gap-2 transition-colors" style={{ color: "var(--text-muted)" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}>
+                    📱 (832) 775-2279
+                  </a>
+                  <a href="https://instagram.com/kaesk_loset" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 transition-colors" style={{ color: "var(--text-muted)" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}>
+                    📸 @kaesk_loset
+                  </a>
+                </div>
               </div>
             </FadeUp>
+
           </div>
         </div>
       </section>
@@ -501,12 +549,26 @@ export default function KlosetSite() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((member, i) => (
               <FadeUp key={i} delay={i * 0.1}>
-                <div style={card} className="rounded-2xl p-6 text-center h-full">
-                  <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "var(--bg-surface)", border: "1px solid var(--border-strong)" }}>
-                    <PersonIcon />
-                  </div>
+                <div
+                  style={i === 0 ? { ...card, borderTop: "2px solid var(--gold)" } : card}
+                  className="rounded-2xl p-6 text-center h-full"
+                >
+                  {/* Kaelyn's card gets a prominent headshot placeholder */}
+                  {i === 0 ? (
+                    <div
+                      className="w-24 h-24 rounded-full flex flex-col items-center justify-center mx-auto mb-4 relative overflow-hidden"
+                      style={{ background: "var(--gold-dim)", border: "2px solid var(--gold)" }}
+                    >
+                      <PersonIcon />
+                    </div>
+                  ) : (
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "var(--bg-surface)", border: "1px solid var(--border-strong)" }}>
+                      <PersonIcon />
+                    </div>
+                  )}
                   <h3 className="font-semibold text-base mb-1" style={{ color: "var(--text-primary)" }}>{member.name}</h3>
-                  <p className="text-xs tracking-wide mb-3" style={{ color: "var(--lavender-light)" }}>{member.role}</p>
+                  <p className="text-xs tracking-wide mb-3" style={{ color: i === 0 ? "var(--gold)" : "var(--lavender-light)" }}>{member.role}</p>
+                  {i === 0 && <p className="text-[10px] tracking-[0.12em] uppercase mb-2" style={{ color: "var(--text-faint)" }}>Headshot coming soon</p>}
                   {member.bio && <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{member.bio}</p>}
                 </div>
               </FadeUp>
@@ -531,8 +593,8 @@ export default function KlosetSite() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             {services.map((s, i) => (
               <FadeUp key={i} delay={i * 0.08}>
-                <div style={card} className="rounded-2xl p-7 h-full flex flex-col">
-                  <span style={{ color: "var(--lavender-light)" }} className="text-xl">{s.icon}</span>
+                <div style={{ ...card, borderTop: "2px solid var(--gold)" }} className="rounded-2xl p-7 h-full flex flex-col">
+                  <span style={{ color: "var(--gold)" }} className="text-xl">{s.icon}</span>
                   <h3 className="font-semibold text-base mt-4 mb-1" style={{ color: "var(--text-primary)" }}>{s.title}</h3>
                   {s.badge && <span className="text-[10px] italic tracking-wide" style={{ color: "var(--text-muted)" }}>{s.badge}</span>}
                   <p className="text-3xl font-light mt-3 mb-1" style={{ color: "var(--text-primary)" }}>
@@ -557,9 +619,9 @@ export default function KlosetSite() {
 
           {/* Holy Hands Inc. */}
           <FadeUp delay={0.35}>
-            <div style={card} className="rounded-2xl p-7">
-              <span style={{ color: "var(--lavender-light)" }} className="text-xl">✧</span>
-              <h3 className="font-semibold text-base mt-4" style={{ color: "var(--text-primary)" }}>Holy Hands Inc.</h3>
+            <div style={{ ...card, borderTop: "2px solid var(--gold)" }} className="rounded-2xl p-7">
+              <span style={{ color: "var(--gold)" }} className="text-xl">✧</span>
+              <h3 className="font-semibold text-base mt-4" style={{ color: "var(--text-primary)" }}>Holy Hands Co.</h3>
               <p className="text-xs tracking-wide mt-1 mb-6" style={{ color: "var(--text-muted)" }}>Hair &amp; Makeup Services</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
@@ -685,8 +747,8 @@ export default function KlosetSite() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
               <FadeUp key={i} delay={i * 0.1}>
-                <div style={card} className="rounded-2xl p-7 h-full flex flex-col">
-                  <span className="text-3xl leading-none mb-4" style={{ color: "var(--lavender)" }}>&ldquo;</span>
+                <div style={{ ...card, borderTop: "2px solid var(--gold)" }} className="rounded-2xl p-7 h-full flex flex-col">
+                  <span className="text-3xl leading-none mb-4" style={{ color: "var(--gold)" }}>&ldquo;</span>
                   <p className="text-sm leading-relaxed flex-1 italic" style={{ color: "var(--text-muted)" }}>{t.quote}</p>
                   <div className="mt-6 pt-5" style={{ borderTop: "1px solid var(--border)" }}>
                     <p className="font-medium text-sm" style={{ color: "var(--text-primary)" }}>{t.name}</p>
@@ -701,163 +763,70 @@ export default function KlosetSite() {
 
       {/* ── BOOK YOUR KONSULTATION ── */}
       <section id="book" className="py-24 px-6" style={{ background: "var(--bg-surface)" }}>
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <FadeUp>
             <p className="text-xs tracking-[0.2em] uppercase text-center mb-4" style={{ color: "var(--lavender-light)" }}>Let&apos;s Connect</p>
             <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-center mb-4" style={{ color: "var(--text-primary)" }}>
-              Book your Konsultation
+              Book with Kae
             </h2>
             <p className="text-center text-sm mb-12" style={{ color: "var(--text-muted)" }}>
-              Ready to transform your style? Fill out the form and Kaelyn will be in touch.
+              Choose your session below — payment is collected securely at checkout via PayPal.
             </p>
           </FadeUp>
 
-          <FadeUp delay={0.15}>
-            {submitted ? (
-              <div style={{ ...card, borderColor: "var(--lavender)" }} className="rounded-2xl p-12 text-center">
-                <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5" style={{ background: "var(--lavender-dim)" }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-light)" strokeWidth="2">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+
+            {/* ── Konsultation — inline Calendly embed ── */}
+            <FadeUp delay={0.1} className="flex-1 min-w-0">
+              <div style={{ ...card, borderTop: "2px solid var(--gold)", overflow: "hidden" }} className="rounded-2xl">
+                <div className="px-6 pt-6 pb-4" style={{ borderBottom: "1px solid var(--border)" }}>
+                  <p className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: "var(--gold)" }}>New Klients</p>
+                  <h3 className="font-semibold text-lg" style={{ color: "var(--text-primary)" }}>Konsultation — 30 min</h3>
+                  <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>Booking fee applied toward your purchase · Powered by Calendly</p>
                 </div>
-                <h3 className="font-semibold text-xl mb-2" style={{ color: "var(--text-primary)" }}>Request Received!</h3>
-                <p className="text-sm" style={{ color: "var(--text-muted)" }}>Thank you for reaching out. Kaelyn will contact you shortly.</p>
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/kaeskustomkloset/30min"
+                  style={{ minWidth: "320px", height: "700px" }}
+                />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} style={card} className="rounded-2xl overflow-hidden">
+            </FadeUp>
 
-                {/* ── Section: Client Information ── */}
-                <div className="px-8 pt-8 pb-6" style={{ borderBottom: "1px solid var(--border)" }}>
-                  <p className="text-[10px] tracking-[0.2em] uppercase mb-5" style={{ color: "var(--gold)" }}>
-                    Client Information
-                  </p>
-                  <div className="space-y-4">
-                    <FormField label="Full Name" required>
-                      <input required type="text" placeholder="Your full name" {...field("name")} {...inputProps} />
-                    </FormField>
-                    <div className="grid grid-cols-2 gap-4">
-                      <FormField label="Date of Birth">
-                        <input type="date" {...field("dob")} {...inputProps} />
-                      </FormField>
-                      <FormField label="Age">
-                        <input type="number" min="0" max="120" placeholder="—" {...field("age")} {...inputProps} />
-                      </FormField>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <FormField label="Email" required>
-                        <input required type="email" placeholder="your@email.com" {...field("email")} {...inputProps} />
-                      </FormField>
-                      <FormField label="Phone">
-                        <input type="tel" placeholder="(000) 000-0000" {...field("phone")} {...inputProps} />
-                      </FormField>
-                    </div>
-                  </div>
+            {/* ── Styling & Event Meeting — link card ── */}
+            <FadeUp delay={0.2} className="w-full lg:w-80 flex-shrink-0">
+              <div style={{ ...card, borderTop: "2px solid var(--lavender-light)" }} className="rounded-2xl p-7">
+                <p className="text-[10px] tracking-[0.2em] uppercase mb-4" style={{ color: "var(--lavender-light)" }}>Existing Klients</p>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center mb-5" style={{ background: "var(--lavender-dim)" }}>
+                  <span style={{ color: "var(--lavender-light)" }} className="text-lg">◈</span>
                 </div>
+                <h3 className="font-semibold text-base mb-2" style={{ color: "var(--text-primary)" }}>Styling &amp; Event Meeting</h3>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--text-muted)" }}>
+                  A focused session for photoshoots, events, and occasion styling — to lock in every detail before your look comes to life.
+                </p>
+                <ul className="space-y-2 mb-8">
+                  {["Photoshoot prep & planning", "Event &amp; occasion styling", "Look confirmations &amp; details"].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-xs" style={{ color: "var(--text-muted)" }}>
+                      <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: "var(--lavender-light)" }} />
+                      <span dangerouslySetInnerHTML={{ __html: item }} />
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://calendly.com/kaeskustomkloset/styling-event-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ background: "var(--lavender)", color: "#fff" }}
+                  className="block text-center w-full py-3 text-sm rounded-full transition-opacity hover:opacity-90 font-medium"
+                >
+                  Schedule a Meeting
+                </a>
+              </div>
+            </FadeUp>
 
-                {/* ── Section: Sizing Information ── */}
-                <div className="px-8 pt-6 pb-6" style={{ borderBottom: "1px solid var(--border)" }}>
-                  <p className="text-[10px] tracking-[0.2em] uppercase mb-5" style={{ color: "var(--gold)" }}>
-                    Sizing Information
-                  </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    {[
-                      { label: "Top", key: "sizeTop", placeholder: "S / M / L…" },
-                      { label: "Bottom", key: "sizeBottom", placeholder: "28 / 30…" },
-                      { label: "Dress", key: "sizeDress", placeholder: "4 / 6 / 8…" },
-                      { label: "Shoe", key: "sizeShoe", placeholder: "7 / 8.5…" },
-                    ].map(({ label, key, placeholder }) => (
-                      <FormField key={key} label={label}>
-                        <input type="text" placeholder={placeholder} {...field(key)} {...inputProps} />
-                      </FormField>
-                    ))}
-                  </div>
-                </div>
-
-                {/* ── Section: Styling Details ── */}
-                <div className="px-8 pt-6 pb-8 space-y-5">
-                  <p className="text-[10px] tracking-[0.2em] uppercase mb-1" style={{ color: "var(--gold)" }}>
-                    Styling Details
-                  </p>
-
-                  <FormField label="Occasion">
-                    <input type="text" placeholder="Birthday, date night, photoshoot, event…" {...field("occasion")} {...inputProps} />
-                  </FormField>
-
-                  <FormField label="Theme / Style Direction" hint="select all that apply">
-                    <div className="flex flex-wrap gap-2 pt-0.5">
-                      {styleOptions.map((s) => {
-                        const active = stylePrefs.includes(s);
-                        return (
-                          <button
-                            key={s}
-                            type="button"
-                            onClick={() => toggleStyle(s)}
-                            style={{
-                              border: `1px solid ${active ? "var(--lavender)" : "var(--border)"}`,
-                              background: active ? "var(--lavender-dim)" : "transparent",
-                              color: active ? "var(--lavender-light)" : "var(--text-muted)",
-                            }}
-                            className="px-4 py-1.5 rounded-full text-xs tracking-wide transition-colors"
-                          >
-                            {s}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </FormField>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <FormField label="Favorite Color">
-                      <input type="text" placeholder="e.g. Nude, Black…" {...field("favoriteColor")} {...inputProps} />
-                    </FormField>
-                    <FormField label="Favorite Music Genre">
-                      <input type="text" placeholder="e.g. R&B, Hip-Hop…" {...field("musicGenre")} {...inputProps} />
-                    </FormField>
-                    <FormField label="Favorite Candy">
-                      <input type="text" placeholder="e.g. Skittles…" {...field("favoriteCandy")} {...inputProps} />
-                    </FormField>
-                  </div>
-
-                  <FormField label="Service of Interest">
-                    <select {...field("service")} {...inputProps} className={`${inputProps.className} appearance-none`}>
-                      <option value="">Select a service…</option>
-                      <option>Appointment-Based Styling Session</option>
-                      <option>Curated Outfit Pack</option>
-                      <option>Shop Off-The-Rack</option>
-                      <option>Wardrobe Revamp</option>
-                      <option>Photoshoot Styling</option>
-                      <option>Event Styling</option>
-                      <option>Group Looks (Bridal / Birthday)</option>
-                      <option>Holy Hands Inc. — Makeup</option>
-                      <option>Holy Hands Inc. — Hair</option>
-                      <option>Multiple Services</option>
-                    </select>
-                  </FormField>
-
-                  <FormField label="Tell us about your vision">
-                    <textarea
-                      rows={4}
-                      placeholder="Describe your event, project, or styling goals…"
-                      {...field("message")}
-                      style={{ background: "var(--bg-base)", border: "1px solid var(--border)", color: "var(--text-primary)" }}
-                      className="w-full rounded-lg px-4 py-3 text-sm outline-none transition-colors resize-none"
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "var(--lavender)")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
-                    />
-                  </FormField>
-
-                  <button
-                    type="submit"
-                    style={{ background: "var(--lavender)", color: "#fff" }}
-                    className="w-full py-3.5 text-sm rounded-full transition-opacity hover:opacity-90 font-medium mt-2"
-                  >
-                    Submit Konsultation Request
-                  </button>
-                </div>
-              </form>
-            )}
-          </FadeUp>
+          </div>
         </div>
+
+        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
       </section>
 
       {/* ── FOOTER ── */}
