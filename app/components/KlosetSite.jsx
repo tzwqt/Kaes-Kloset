@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Script from "next/script";
+import Image from "next/image";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -73,11 +74,18 @@ const koreValues = [
 const team = [
   {
     name: "Kaelyn Charles",
-    role: "Founder & CEO",
+    role: "CEO / Founder",
     bio: "Kaelyn is the visionary behind Kae's Kloset — a stylist, entrepreneur, and answered prayer to every client she serves. Her mission: confidence, style, and transformation.",
+    image: "/team/kaelyn-charles.jpg",
   },
-  { name: "Team Member", role: "Coming Soon", bio: "" },
-  { name: "Team Member", role: "Coming Soon", bio: "" },
+  { name: "Abena Pokua", role: "Chief Operating Officer", image: "/team/abena-pokua.png" },
+  { name: "AJ Charles", role: "Chief Finance Officer", image: "/team/aj-charles.png" },
+  { name: "Abrielle Lewis", role: "Chief of Staff", image: "/team/abrielle-lewis.jpg" },
+  { name: "Jada Edwards", role: "Hair Salon Owner / Co-Partner", image: "/team/jada-edwards.jpg" },
+  { name: "Tiffany Charles", role: "Human Resources", image: "/team/tiffany-charles.jpg" },
+  { name: "Damaris Young", role: "Executive Creative Director", image: "/team/damaris-young.png" },
+  { name: "Ja'Lynn Manson", role: "Head Stylist Consultant", image: "/team/jalynn-manson.jpg" },
+  { name: "Kayla Charles", role: "Graphics", image: "/team/kayla-charles.png" },
 ];
 
 const testimonials = [
@@ -559,7 +567,7 @@ export default function KlosetSite() {
             <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-center mb-4" style={{ color: "var(--text-primary)" }}>
               Meet the Team
             </h2>
-            <p className="text-center text-sm mb-16" style={{ color: "var(--text-muted)" }}>Full team profiles coming soon.</p>
+            <p className="text-center text-sm mb-16" style={{ color: "var(--text-muted)" }}>The people behind the Kloset.</p>
           </FadeUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -569,22 +577,29 @@ export default function KlosetSite() {
                   style={i === 0 ? { ...card, borderTop: "2px solid var(--gold)" } : card}
                   className="rounded-2xl p-6 text-center h-full"
                 >
-                  {/* Kaelyn's card gets a prominent headshot placeholder */}
-                  {i === 0 ? (
-                    <div
-                      className="w-24 h-24 rounded-full flex flex-col items-center justify-center mx-auto mb-4 relative overflow-hidden"
-                      style={{ background: "var(--gold-dim)", border: "2px solid var(--gold)" }}
-                    >
-                      <PersonIcon />
-                    </div>
-                  ) : (
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "var(--bg-surface)", border: "1px solid var(--border-strong)" }}>
-                      <PersonIcon />
-                    </div>
-                  )}
+                  <div
+                    className="rounded-full mx-auto mb-4 relative overflow-hidden"
+                    style={i === 0
+                      ? { width: 96, height: 96, border: "2px solid var(--gold)", background: "var(--gold-dim)" }
+                      : { width: 80, height: 80, border: "1px solid var(--border-strong)", background: "var(--bg-surface)" }
+                    }
+                  >
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        style={{ objectFit: "cover", objectPosition: "center top" }}
+                        sizes="96px"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <PersonIcon />
+                      </div>
+                    )}
+                  </div>
                   <h3 className="font-semibold text-base mb-1" style={{ color: "var(--text-primary)" }}>{member.name}</h3>
                   <p className="text-xs tracking-wide mb-3" style={{ color: i === 0 ? "var(--gold)" : "var(--lavender-light)" }}>{member.role}</p>
-                  {i === 0 && <p className="text-[10px] tracking-[0.12em] uppercase mb-2" style={{ color: "var(--text-faint)" }}>Headshot coming soon</p>}
                   {member.bio && <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{member.bio}</p>}
                 </div>
               </FadeUp>
