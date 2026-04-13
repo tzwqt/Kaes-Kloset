@@ -242,14 +242,14 @@ export default function KlosetSite() {
 
       {/* ── ANNOUNCEMENT STRIP ── */}
       <div
-        className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-center gap-3 py-2 text-[11px] tracking-[0.18em] uppercase overflow-hidden"
+        className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-center gap-3 py-2 text-[11px] tracking-[0.18em] uppercase overflow-hidden whitespace-nowrap"
         style={{ background: "var(--lavender)", color: "#fff", borderBottom: "1px solid var(--gold)", boxShadow: "0 1px 0 0 var(--gold)" }}
       >
         <span style={{ color: "var(--gold)" }}>✦</span>
         <span>Now Featuring: Lavender Luxe Looks</span>
-        <span style={{ color: "var(--gold)", opacity: 0.8 }}>✦</span>
-        <span style={{ opacity: 0.75 }}>Golden Hour Glam Coming This Month</span>
-        <span style={{ color: "var(--gold)" }}>✦</span>
+        <span className="hidden sm:inline" style={{ color: "var(--gold)", opacity: 0.8 }}>✦</span>
+        <span className="hidden sm:inline" style={{ opacity: 0.75 }}>Golden Hour Glam Coming This Month</span>
+        <span className="hidden sm:inline" style={{ color: "var(--gold)" }}>✦</span>
       </div>
 
       {/* ── NAV ── */}
