@@ -246,10 +246,14 @@ export default function KlosetSite() {
         style={{ background: "var(--lavender)", color: "#fff", borderBottom: "1px solid var(--gold)", boxShadow: "0 1px 0 0 var(--gold)" }}
       >
         <span style={{ color: "var(--gold)" }}>✦</span>
+        <span style={{ color: "var(--gold)", opacity: 0.6 }}>✦</span>
+        <span style={{ color: "var(--gold)", opacity: 0.3 }}>✦</span>
         <span>Now Featuring: Lavender Luxe Looks</span>
         <span className="hidden sm:inline" style={{ color: "var(--gold)", opacity: 0.8 }}>✦</span>
         <span className="hidden sm:inline" style={{ opacity: 0.75 }}>Golden Hour Glam Coming This Month</span>
-        <span className="hidden sm:inline" style={{ color: "var(--gold)" }}>✦</span>
+        <span className="hidden sm:inline" style={{ color: "var(--gold)", opacity: 0.3 }}>✦</span>
+        <span className="hidden sm:inline" style={{ color: "var(--gold)", opacity: 0.6 }}>✦</span>
+        <span style={{ color: "var(--gold)" }}>✦</span>
       </div>
 
       {/* ── NAV ── */}
@@ -890,16 +894,6 @@ export default function KlosetSite() {
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-faint)")}>
               Instagram
-            </a>
-            <a href="#" className="transition-colors"
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-faint)")}>
-              TikTok
-            </a>
-            <a href="#" className="transition-colors"
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-faint)")}>
-              Pinterest
             </a>
           </div>
         </div>
