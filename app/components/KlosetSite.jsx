@@ -865,39 +865,46 @@ export default function KlosetSite() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer style={{ borderTop: "1px solid var(--border)", background: "var(--bg-base)" }} className="px-6 py-10">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
-          <div className="text-center md:text-left">
+      <footer style={{ borderTop: "1px solid var(--border)", background: "var(--bg-base)" }} className="px-6 py-12">
+        <div className="max-w-5xl mx-auto flex flex-col items-center gap-6">
+
+          {/* Logo + tagline */}
+          <div className="flex flex-col items-center gap-2">
             <img
               src={dark ? "/logo-gold.png" : "/logo-lavender.png"}
               alt="Kae's Kloset"
-              className="h-16 w-auto mx-auto md:mx-0 mb-2"
+              className="h-16 w-auto"
             />
             <p className="text-xs" style={{ color: "var(--text-faint)" }}>A Kustom store with a Kustomizable experience.</p>
           </div>
 
-          <div className="flex flex-col items-center gap-1 text-xs" style={{ color: "var(--text-faint)" }}>
+          {/* Divider */}
+          <div className="w-24 h-px" style={{ background: "var(--border)" }} />
+
+          {/* Contact + Social */}
+          <div className="flex flex-col sm:flex-row items-center gap-6 text-xs" style={{ color: "var(--text-faint)" }}>
             <a href="mailto:kaeskustomkloset@gmail.com" className="transition-colors"
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-faint)")}>
               kaeskustomkloset@gmail.com
             </a>
+            <span className="hidden sm:inline" style={{ color: "var(--border-strong)" }}>·</span>
             <a href="tel:8327752279" className="transition-colors"
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-faint)")}>
               (832) 775-2279
             </a>
-          </div>
-
-          <div className="flex gap-6 text-xs" style={{ color: "var(--text-faint)" }}>
+            <span className="hidden sm:inline" style={{ color: "var(--border-strong)" }}>·</span>
             <a href="https://instagram.com/kaesk_loset" target="_blank" rel="noopener noreferrer" className="transition-colors"
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-faint)")}>
-              Instagram
+              @kaesk_loset
             </a>
           </div>
+
+          {/* Copyright */}
+          <p className="text-xs" style={{ color: "var(--text-faint)" }}>© 2026 Kae&apos;s Kloset. All rights reserved.</p>
         </div>
-        <p className="text-center text-xs mt-8" style={{ color: "var(--text-faint)" }}>© 2026 Kae&apos;s Kloset. All rights reserved.</p>
       </footer>
 
     </div>
