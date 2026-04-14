@@ -89,9 +89,21 @@ const team = [
 ];
 
 const testimonials = [
-  { name: "Client Name", quote: "Testimonials coming soon — check back shortly!", role: "Client" },
-  { name: "Client Name", quote: "Testimonials coming soon — check back shortly!", role: "Client" },
-  { name: "Client Name", quote: "Testimonials coming soon — check back shortly!", role: "Client" },
+  {
+    name: "Darchayla",
+    role: "Klient",
+    quote: "My experience with Kae's Kloset has been exceptional from start to finish. Every meeting felt like a safe space for discovery and collaboration. Kaelyn is detail-oriented, creative, and consistently encourages me to step outside my comfort zone. Her eye for style has helped me feel more confident and feminine in my clothing choices. She is also highly responsive and professional, making the entire process smooth and enjoyable. I would strongly recommend booking a consultation, whether for a single event or a full photoshoot. The Kae's Kloset team truly provides everything needed for a standout look and experience.",
+  },
+  {
+    name: "Rauterica",
+    role: "Klient",
+    quote: "My experience with Kae's Closet can be summed up in two words: excellence and care. From the initial consultation to the final looks, the process was seamless, thoughtful, and highly personalized. Kaelyn curated styles that truly reflected and elevated my personal vision. I highly recommend Kae's Kloset to anyone looking to build confidence and step fully into their personal style.",
+  },
+  {
+    name: "Makayla",
+    role: "Klient",
+    quote: "I have had an amazing experience working with Kae's Kloset! They were professional, made the entire process stress-free, and brought my vision to life — from outfits to creative ideas to laughter! I absolutely loved bringing my birthday photoshoot vision to life… 10/10, highly recommend! I'm already looking forward to working with them again. #KaesKlosetKleanse is next!",
+  },
 ];
 
 // ─── FADE-UP WRAPPER ─────────────────────────────────────────────────────────
@@ -776,7 +788,7 @@ export default function KlosetSite() {
             <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-center mb-4" style={{ color: "var(--text-primary)" }}>
               Testimonials
             </h2>
-            <p className="text-center text-sm mb-16" style={{ color: "var(--text-muted)" }}>Client testimonials coming soon.</p>
+            <p className="text-center text-sm mb-16" style={{ color: "var(--text-muted)" }}>What real klients are saying.</p>
           </FadeUp>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
