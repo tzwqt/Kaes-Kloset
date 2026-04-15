@@ -75,56 +75,65 @@ const team = [
   {
     name: "Kaelyn Charles",
     role: "CEO / Founder",
-    bio: "Kaelyn is the visionary behind Kae's Kloset — a stylist, entrepreneur, and answered prayer to every client she serves. Her mission: confidence, style, and transformation.",
+    bio: "I'm the visionary behind Kae's Kloset — a stylist, entrepreneur, and answered prayer to every client I serve. My mission: confidence, style, and transformation.",
     image: "/team/kaelyn-charles.jpg",
+    instagram: "#",
   },
   {
     name: "Abena Pokua",
     role: "Chief Operating Officer",
-    bio: "Abena Pokua serves as the Chief Operating Officer of Kae's Kloset, a brand dedicated to empowering individuals to discover confidence through personal style. In this role, she oversees internal operations by ensuring clear, accurate communication across all channels while managing backend processes to support efficiency and organizational excellence.",
+    bio: "I serve as the Chief Operating Officer of Kae's Kloset, a brand dedicated to empowering individuals to discover confidence through personal style. I oversee internal operations by ensuring clear, accurate communication across all channels while managing backend processes to support efficiency and organizational excellence.",
     image: "/team/abena-pokua.png",
+    instagram: "#",
   },
   {
     name: "AJ Charles",
     role: "Chief Finance Officer",
-    bio: "Andre Charles Jr. serves as the Chief Financial Officer of Kae's Kloset, where he oversees financial strategy, budgeting, and long-term growth planning. With a sharp eye for detail and a commitment to excellence, he ensures the brand operates with integrity, sustainability, and financial strength.",
+    bio: "I serve as the Chief Financial Officer of Kae's Kloset, where I oversee financial strategy, budgeting, and long-term growth planning. With a sharp eye for detail and a commitment to excellence, I ensure the brand operates with integrity, sustainability, and financial strength.",
     image: "/team/aj-charles.png",
+    instagram: "#",
   },
   {
     name: "Abrielle Lewis",
     role: "Chief of Staff",
-    bio: "As Chief of Staff for Kae's Kloset, I serve as a strategic partner in driving vision and execution across the brand. I align leadership, streamline operations, and ensure clarity in day-to-day functions helping turn ideas into action while supporting a mission rooted in confidence, creativity, and community impact.",
+    bio: "As Chief of Staff for Kae's Kloset, I serve as a strategic partner in driving vision and execution across the brand. I align leadership, streamline operations, and ensure clarity in day-to-day functions — helping turn ideas into action while supporting a mission rooted in confidence, creativity, and community impact.",
     image: "/team/abrielle-lewis.jpg",
+    instagram: "#",
   },
   {
     name: "Jada Edwards",
     role: "Hair Salon Owner / Co-Partner",
-    bio: "Jada is the CEO of HolyHands.Co — a stylist and entrepreneur dedicated to helping others feel confident in their natural beauty. She is also a Co-Partner of Kae's Kloset, supporting the brand's vision of style, empowerment, and transformation. Her mission is to inspire confidence and purpose in everyone she serves.",
+    bio: "I'm the CEO of HolyHands.Co — a stylist and entrepreneur dedicated to helping others feel confident in their natural beauty. I'm also a Co-Partner of Kae's Kloset, supporting the brand's vision of style, empowerment, and transformation. My mission is to inspire confidence and purpose in everyone I serve.",
     image: "/team/jada-edwards.jpg",
+    instagram: "#",
   },
   {
     name: "Tiffany Charles",
     role: "Human Resources Director",
     bio: "As the Human Resources Director for Kae's Kloset, I bring a strategic and people-centered approach to cultivating a strong, values-driven workplace. I am passionate about developing talent and fostering organizational excellence, overseeing all aspects of employee engagement, recruitment, and professional development. I am committed to building a culture that empowers individuals, promotes integrity, and aligns with the vision and growth of the Kae Kloset brand.",
     image: "/team/tiffany-charles.jpg",
+    instagram: "#",
   },
   {
     name: "Damaris Young",
     role: "Executive Creative Director",
-    bio: "Damaris is the Executive Creative Director of Kae's Kloset, building a fashion-forward brand that empowers confidence, creativity, and individuality while creating meaningful impact in the community.",
+    bio: "I'm the Executive Creative Director of Kae's Kloset, building a fashion-forward brand that empowers confidence, creativity, and individuality while creating meaningful impact in the community.",
     image: "/team/damaris-young.png",
+    instagram: "#",
   },
   {
     name: "Ja'Lynn Manson",
     role: "Head Stylist Consultant",
-    bio: "Ja'Lynn is your Head Stylist Consultant and creative visionary. I believe styling is more than what you wear: it's how you show up. I help you step confidently into your God-given identity through intentional, elevated style. From head to toe, every detail is curated to bring out your inner beauty — so you feel like the royalty you are. More than fashion… it's transformation!",
+    bio: "I'm your Head Stylist Consultant and creative visionary. I believe styling is more than what you wear: it's how you show up. I help you step confidently into your God-given identity through intentional, elevated style. From head to toe, every detail is curated to bring out your inner beauty — so you feel like the royalty you are. More than fashion… it's transformation!",
     image: "/team/jalynn-manson.jpg",
+    instagram: "#",
   },
   {
     name: "Kayla Charles",
     role: "Photographer",
-    bio: "Kayla is a freelance, partnered photographer who captures the essence of Kae's Kloset through intentional, storytelling imagery. She believes every person carries a unique beauty worth highlighting. Kayla's goal isn't just to take photos, but to create an experience where clients feel seen, confident, and celebrated, resulting in images that authentically reflect who they truly are.",
+    bio: "I'm a freelance, partnered photographer who captures the essence of Kae's Kloset through intentional, storytelling imagery. I believe every person carries a unique beauty worth highlighting. My goal isn't just to take photos, but to create an experience where clients feel seen, confident, and celebrated — resulting in images that authentically reflect who they truly are.",
     image: "/team/kayla-charles.png",
+    instagram: "#",
   },
 ];
 
@@ -252,6 +261,7 @@ export default function KlosetSite() {
   }
   const [submitted, setSubmitted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [expandedBio, setExpandedBio] = useState(null);
 
   // Apply theme to root element
   useEffect(() => {
@@ -294,18 +304,26 @@ export default function KlosetSite() {
 
       {/* ── ANNOUNCEMENT STRIP ── */}
       <div
-        className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-center gap-3 py-2 text-[11px] tracking-[0.18em] uppercase overflow-hidden whitespace-nowrap"
-        style={{ background: "var(--lavender)", color: "#fff", borderBottom: "1px solid var(--gold)", boxShadow: "0 1px 0 0 var(--gold)" }}
+        className="fixed top-0 left-0 right-0 z-[60] py-2 overflow-hidden"
+        style={{ background: "var(--lavender)", borderBottom: "1px solid var(--gold)", boxShadow: "0 1px 0 0 var(--gold)" }}
       >
-        <span style={{ color: "var(--gold)" }}>✦</span>
-        <span style={{ color: "var(--gold)", opacity: 0.6 }}>✦</span>
-        <span style={{ color: "var(--gold)", opacity: 0.3 }}>✦</span>
-        <span>Now Featuring: Lavender Luxe Looks</span>
-        <span className="hidden sm:inline" style={{ color: "var(--gold)", opacity: 0.8 }}>✦</span>
-        <span className="hidden sm:inline" style={{ opacity: 0.75 }}>Golden Hour Glam Coming This Month</span>
-        <span className="hidden sm:inline" style={{ color: "var(--gold)", opacity: 0.3 }}>✦</span>
-        <span className="hidden sm:inline" style={{ color: "var(--gold)", opacity: 0.6 }}>✦</span>
-        <span style={{ color: "var(--gold)" }}>✦</span>
+        <div className="marquee-track text-[11px] tracking-[0.18em] uppercase whitespace-nowrap" style={{ color: "#fff" }}>
+          {[0, 1].map((_, k) => (
+            <span key={k} className="flex items-center">
+              <span className="px-5" style={{ color: "var(--gold)" }}>✦</span>
+              <span>Now Featuring: Lavender Luxe Looks</span>
+              <span className="px-5" style={{ color: "var(--gold)" }}>✦</span>
+              <span>Golden Hour Glam Coming This Month</span>
+              <span className="px-5" style={{ color: "var(--gold)" }}>✦</span>
+              <span>Appointment-Based Styling Now Open</span>
+              <span className="px-5" style={{ color: "var(--gold)" }}>✦</span>
+              <span>Book Your Konsultation Today</span>
+              <span className="px-5" style={{ color: "var(--gold)" }}>✦</span>
+              <span>Curated Looks · Premium Pieces · Confidence First</span>
+              <span className="px-5" style={{ color: "var(--gold)" }}>✦</span>
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* ── NAV ── */}
@@ -627,39 +645,89 @@ export default function KlosetSite() {
           </FadeUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {team.map((member, i) => (
-              <FadeUp key={i} delay={i * 0.1}>
-                <div
-                  style={i === 0 ? { ...card, borderTop: "2px solid var(--gold)" } : card}
-                  className="rounded-2xl p-6 text-center h-full"
-                >
+            {team.map((member, i) => {
+              const isExpanded = expandedBio === i;
+              const BIO_LIMIT = 100;
+              const truncated = member.bio && member.bio.length > BIO_LIMIT;
+              const displayBio = member.bio
+                ? isExpanded ? member.bio : member.bio.slice(0, BIO_LIMIT) + (truncated ? "…" : "")
+                : null;
+              return (
+                <FadeUp key={i} delay={i * 0.1}>
                   <div
-                    className="rounded-full mx-auto mb-4 relative overflow-hidden"
-                    style={i === 0
-                      ? { width: 96, height: 96, border: "2px solid var(--gold)", background: "var(--gold-dim)" }
-                      : { width: 80, height: 80, border: "1px solid var(--border-strong)", background: "var(--bg-surface)" }
-                    }
+                    style={i === 0 ? { ...card, borderTop: "2px solid var(--gold)", transition: "box-shadow 0.25s" } : { ...card, transition: "box-shadow 0.25s" }}
+                    className="rounded-2xl p-6 text-center flex flex-col h-full"
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.boxShadow = i === 0
+                        ? "0 0 0 1px var(--gold), 0 0 28px var(--gold-dim)"
+                        : "0 0 0 1px var(--lavender-light), 0 0 28px var(--lavender-dim)";
+                    }}
+                    onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "none"; }}
                   >
-                    {member.image ? (
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        style={{ objectFit: "cover", objectPosition: "center top" }}
-                        sizes="96px"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <PersonIcon />
+                    <div
+                      className="rounded-full mx-auto mb-4 relative overflow-hidden"
+                      style={i === 0
+                        ? { width: 96, height: 96, border: "2px solid var(--gold)", background: "var(--gold-dim)" }
+                        : { width: 80, height: 80, border: "1px solid var(--border-strong)", background: "var(--bg-surface)" }
+                      }
+                    >
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          style={{ objectFit: "cover", objectPosition: "center top" }}
+                          sizes="96px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <PersonIcon />
+                        </div>
+                      )}
+                    </div>
+
+                    <h3 className="font-semibold text-base mb-1" style={{ color: "var(--text-primary)" }}>{member.name}</h3>
+                    <p className="text-xs tracking-wide mb-3" style={{ color: i === 0 ? "var(--gold)" : "var(--lavender-light)" }}>{member.role}</p>
+
+                    {displayBio && (
+                      <div className="flex-1">
+                        <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{displayBio}</p>
+                        {truncated && (
+                          <button
+                            onClick={() => setExpandedBio(isExpanded ? null : i)}
+                            className="text-xs mt-2 tracking-wide underline-offset-2 hover:underline"
+                            style={{ color: i === 0 ? "var(--gold)" : "var(--lavender-light)" }}
+                          >
+                            {isExpanded ? "Show less" : "Read more"}
+                          </button>
+                        )}
+                      </div>
+                    )}
+
+                    {member.instagram && (
+                      <div className="mt-4 pt-3" style={{ borderTop: "1px solid var(--border)" }}>
+                        <a
+                          href={member.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on Instagram`}
+                          style={{ color: "var(--text-faint)" }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--lavender-light)")}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-faint)")}
+                          className="inline-flex items-center justify-center transition-colors"
+                        >
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                          </svg>
+                        </a>
                       </div>
                     )}
                   </div>
-                  <h3 className="font-semibold text-base mb-1" style={{ color: "var(--text-primary)" }}>{member.name}</h3>
-                  <p className="text-xs tracking-wide mb-3" style={{ color: i === 0 ? "var(--gold)" : "var(--lavender-light)" }}>{member.role}</p>
-                  {member.bio && <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{member.bio}</p>}
-                </div>
-              </FadeUp>
-            ))}
+                </FadeUp>
+              );
+            })}
           </div>
         </div>
       </section>
