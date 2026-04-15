@@ -17,7 +17,10 @@
       "Bash(pip3 install:*)",
       "Bash(cp \"/Users/sunbelt/Downloads/Kae's Headshot.jpeg\" /Users/sunbelt/kaes-kloset/public/team/kaelyn-charles.jpg)",
       "Bash(cp \"/Users/sunbelt/Downloads/Abrielle Lewis Headhsot.jpeg\" /Users/sunbelt/kaes-kloset/public/team/abrielle-lewis.jpg)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(cp '/Users/sunbelt/Downloads/8CF2EABF-9E6B-4EF6-9FD2-338D36CE4D02.JPEG' /Users/sunbelt/kaes-kloset/public/work/look-01.jpg)",
+      "Bash(cp '/Users/sunbelt/Downloads/IMG_7531.JPEG' /Users/sunbelt/kaes-kloset/public/work/look-02.jpg)",
+      "Bash(sips *)"
     ]
   }
 }

@@ -836,26 +836,36 @@ export default function KlosetSite() {
           {/* Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
             {[
-              { span: "col-span-2", h: "h-64", label: "Lavender Luxe Looks" },
-              { span: "",           h: "h-64", label: "Golden Hour Glam" },
-              { span: "",           h: "h-44", label: "Streetwear Edit" },
-              { span: "",           h: "h-44", label: "Business Chic" },
-              { span: "col-span-2", h: "h-44", label: "Curated Pack — Date Night" },
+              { span: "col-span-1", h: "h-80", label: "Business Chic", src: "/work/look-01.jpg" },
+              { span: "col-span-1", h: "h-80", label: "Streetwear Edit", src: "/work/look-02.jpg" },
+              { span: "col-span-2 md:col-span-1", h: "h-64", label: "Golden Hour Glam", src: null },
+              { span: "col-span-1", h: "h-52", label: "Lavender Luxe", src: null },
+              { span: "col-span-1", h: "h-52", label: "Curated Pack", src: null },
             ].map((cell, i) => (
               <FadeUp key={i} delay={i * 0.06}>
                 <div
                   style={{ ...card, position: "relative", overflow: "hidden" }}
                   className={`rounded-xl flex items-end ${cell.span} ${cell.h}`}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-faint)" strokeWidth="1.2">
-                      <rect x="3" y="3" width="18" height="18" rx="2"/>
-                      <circle cx="8.5" cy="8.5" r="1.5"/>
-                      <polyline points="21 15 16 10 5 21"/>
-                    </svg>
-                  </div>
-                  <div className="relative w-full px-4 py-3" style={{ background: "linear-gradient(to top, var(--bg-surface) 60%, transparent)" }}>
-                    <p className="text-[10px] tracking-[0.15em] uppercase" style={{ color: "var(--gold)" }}>{cell.label}</p>
+                  {cell.src ? (
+                    <Image
+                      src={cell.src}
+                      alt={cell.label}
+                      fill
+                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-faint)" strokeWidth="1.2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                      </svg>
+                    </div>
+                  )}
+                  <div className="relative w-full px-4 py-3" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 60%, transparent)" }}>
+                    <p className="text-[10px] tracking-[0.15em] uppercase" style={{ color: cell.src ? "#fff" : "var(--gold)" }}>{cell.label}</p>
                   </div>
                 </div>
               </FadeUp>
