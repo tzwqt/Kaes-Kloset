@@ -836,15 +836,15 @@ export default function KlosetSite() {
           {/* Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
             {[
-              { span: "col-span-1", h: "h-[420px]", label: "Streetwear",      src: "/work/look-01.jpg" },
-              { span: "col-span-1", h: "h-[420px]", label: "Y2K",             src: "/work/look-02.jpg" },
-              { span: "col-span-1", h: "h-[420px]", label: "Pinstripe Power", src: "/work/look-03.jpg" },
-              { span: "col-span-2 md:col-span-3", h: "h-[340px]", label: "Casual Luxe", src: "/work/look-04.png" },
+              { span: "col-span-1", height: 420, label: "Streetwear",      src: "/work/look-01.jpg" },
+              { span: "col-span-1", height: 420, label: "Y2K",             src: "/work/look-02.jpg" },
+              { span: "col-span-1", height: 420, label: "Pinstripe Power", src: "/work/look-03.jpg" },
+              { span: "col-span-2 md:col-span-3", height: 340, label: "Casual Luxe", src: "/work/look-04.png" },
             ].map((cell, i) => (
               <FadeUp key={i} delay={i * 0.06}>
                 <div
-                  style={{ ...card, position: "relative", overflow: "hidden" }}
-                  className={`rounded-xl flex items-end ${cell.span} ${cell.h}`}
+                  style={{ ...card, position: "relative", overflow: "hidden", height: cell.height }}
+                  className={`rounded-xl flex items-end ${cell.span}`}
                 >
                   {cell.src ? (
                     <Image
