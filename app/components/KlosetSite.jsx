@@ -836,11 +836,10 @@ export default function KlosetSite() {
           {/* Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
             {[
-              { span: "col-span-1", h: "h-80", label: "Business Chic", src: "/work/look-01.jpg" },
-              { span: "col-span-1", h: "h-80", label: "Streetwear Edit", src: "/work/look-02.jpg" },
-              { span: "col-span-2 md:col-span-1", h: "h-64", label: "Golden Hour Glam", src: null },
-              { span: "col-span-1", h: "h-52", label: "Lavender Luxe", src: null },
-              { span: "col-span-1", h: "h-52", label: "Curated Pack", src: null },
+              { span: "col-span-1", h: "h-[420px]", label: "Streetwear",      src: "/work/look-01.jpg" },
+              { span: "col-span-1", h: "h-[420px]", label: "Y2K",             src: "/work/look-02.jpg" },
+              { span: "col-span-1", h: "h-[420px]", label: "Pinstripe Power", src: "/work/look-03.jpg" },
+              { span: "col-span-2 md:col-span-3", h: "h-[340px]", label: "Casual Luxe", src: "/work/look-04.png" },
             ].map((cell, i) => (
               <FadeUp key={i} delay={i * 0.06}>
                 <div
