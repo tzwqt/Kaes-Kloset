@@ -9,19 +9,19 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Appointment-Based Curated Styling",
+    title: "Appointment-Based Kurated Styling",
     price: "$15–$50",
     unit: " fee",
     badge: "Applied toward purchase",
-    description: "Complete a consultation form, then arrive for a 1-hour personalized session with 4–8 curated selections hand-picked for your occasion and style.",
-    experience: ["Lavender consultation cards + gold clips", "Black folders for your look profile", "Curated racks preset before you arrive"],
+    description: "Complete a konsultation form, then arrive for a 1-hour personalized session with 4–8 kurated selections hand-picked for your occasion and style.",
+    experience: ["Lavender konsultation cards + gold clips", "Black folders for your look profile", "Kurated racks preset before you arrive"],
     icon: "✦",
   },
   {
-    title: "Curated Outfit Packs",
+    title: "Kurated Outfit Packs",
     price: "$80–$350",
     unit: "/look",
-    description: "Ready-made outfit sets styled for birthdays, date nights, photoshoots, vacations, professional looks, and glam events.",
+    description: "Ready-made outfit sets kurated for birthdays, date nights, photoshoots, vacations, professional looks, and glam events.",
     experience: ["Branded lavender tags + gold detailing", "Packaged and presentation-ready", "Styled for your exact occasion"],
     icon: "◈",
   },
@@ -46,12 +46,12 @@ const services = [
 const koreValues = [
   {
     title: "Konfidence",
-    description: "Every client walks out feeling like the best version of themselves — inside and out.",
+    description: "Every klient walks out feeling like the best version of themselves — inside and out.",
     icon: "✦",
   },
   {
     title: "Intentionality",
-    description: "Every look is curated with purpose — nothing about your style is accidental.",
+    description: "Every look is kurated with purpose — nothing about your style is accidental.",
     icon: "◈",
   },
   {
@@ -75,7 +75,7 @@ const team = [
   {
     name: "Kaelyn Charles",
     role: "CEO / Founder",
-    bio: "I'm the visionary behind Kae's Kloset — a stylist, entrepreneur, and answered prayer to every client I serve. My mission: confidence, style, and transformation.",
+    bio: "I'm the visionary behind Kae's Kloset — a stylist, entrepreneur, and answered prayer to every klient I serve. My mission: konfidence, style, and transformation.",
     image: "/team/kaelyn-charles.jpg",
     instagram: "#",
   },
@@ -96,7 +96,7 @@ const team = [
   {
     name: "Abrielle Lewis",
     role: "Chief of Staff",
-    bio: "As Chief of Staff for Kae's Kloset, I serve as a strategic partner in driving vision and execution across the brand. I align leadership, streamline operations, and ensure clarity in day-to-day functions — helping turn ideas into action while supporting a mission rooted in confidence, creativity, and community impact.",
+    bio: "As Chief of Staff for Kae's Kloset, I serve as a strategic partner in driving vision and execution across the brand. I align leadership, streamline operations, and ensure clarity in day-to-day functions — helping turn ideas into action while supporting a mission rooted in konfidence, kreativity, and kommunity impact.",
     image: "/team/abrielle-lewis.jpg",
     instagram: "#",
   },
@@ -117,21 +117,21 @@ const team = [
   {
     name: "Damaris Young",
     role: "Executive Creative Director",
-    bio: "I'm the Executive Creative Director of Kae's Kloset, building a fashion-forward brand that empowers confidence, creativity, and individuality while creating meaningful impact in the community.",
+    bio: "I'm the Executive Creative Director of Kae's Kloset, building a fashion-forward brand that empowers konfidence, kreativity, and individuality while creating meaningful impact in the kommunity.",
     image: "/team/damaris-young.png",
     instagram: "#",
   },
   {
     name: "Ja'Lynn Manson",
     role: "Head Stylist Consultant",
-    bio: "I'm your Head Stylist Consultant and creative visionary. I believe styling is more than what you wear: it's how you show up. I help you step confidently into your God-given identity through intentional, elevated style. From head to toe, every detail is curated to bring out your inner beauty — so you feel like the royalty you are. More than fashion… it's transformation!",
+    bio: "I'm your Head Stylist Konsultant and kreative visionary. I believe styling is more than what you wear: it's how you show up. I help you step confidently into your God-given identity through intentional, elevated style. From head to toe, every detail is kurated to bring out your inner beauty — so you feel like the royalty you are. More than fashion… it's transformation!",
     image: "/team/jalynn-manson.jpg",
     instagram: "#",
   },
   {
     name: "Kayla Charles",
     role: "Photographer",
-    bio: "I'm a freelance, partnered photographer who captures the essence of Kae's Kloset through intentional, storytelling imagery. I believe every person carries a unique beauty worth highlighting. My goal isn't just to take photos, but to create an experience where clients feel seen, confident, and celebrated — resulting in images that authentically reflect who they truly are.",
+    bio: "I'm a freelance, partnered photographer who captures the essence of Kae's Kloset through intentional, storytelling imagery. I believe every person carries a unique beauty worth highlighting. My goal isn't just to take photos, but to create an experience where klients feel seen, konfident, and kelebrated — resulting in images that authentically reflect who they truly are.",
     image: "/team/kayla-charles.png",
     instagram: "#",
   },
@@ -319,7 +319,7 @@ export default function KlosetSite() {
               <span className="px-5" style={{ color: "var(--gold)" }}>✦</span>
               <span>Book Your Konsultation Today</span>
               <span className="px-5" style={{ color: "var(--gold)" }}>✦</span>
-              <span>Curated Looks · Premium Pieces · Confidence First</span>
+              <span>Kurated Looks · Premium Pieces · Konfidence First</span>
               <span className="px-5" style={{ color: "var(--gold)" }}>✦</span>
             </span>
           ))}
@@ -446,7 +446,7 @@ export default function KlosetSite() {
           className="mt-6 text-lg max-w-lg mx-auto leading-relaxed"
           style={{ color: "var(--text-muted)" }}
         >
-          A boutique designed to celebrate your individuality — appointment-based styling, curated looks, and premium pieces crafted to make you feel fearfully and wonderfully made.
+          A boutique designed to kelebrate your individuality — appointment-based styling, kurated looks, and premium pieces krafted to make you feel fearfully and wonderfully made.
         </motion.p>
 
         <motion.div
@@ -494,7 +494,7 @@ export default function KlosetSite() {
                 </div>
                 <h3 className="text-lg font-semibold mb-4" style={{ color: "var(--lavender-light)" }}>Our Mission</h3>
                 <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                  To provide high-quality, stylish, and unique fashion pieces paired with an unmatched personalized shopping experience — where confidence, creativity, and individuality are celebrated.
+                  To provide high-quality, stylish, and unique fashion pieces paired with an unmatched personalized shopping experience — where konfidence, kreativity, and individuality are kelebrated.
                 </p>
               </div>
             </FadeUp>
@@ -506,7 +506,7 @@ export default function KlosetSite() {
                 </div>
                 <h3 className="text-lg font-semibold mb-4" style={{ color: "var(--lavender-light)" }}>Our Vision</h3>
                 <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                  To cultivate a boutique experience where every client is seen, valued, and celebrated as the beautifully unique individual God created them to be — because each person is &ldquo;fearfully and wonderfully made&rdquo; (Psalm 139:14). Kae&apos;s Kloset exists to reflect this truth through curated wardrobe experiences that highlight each client&apos;s God-given beauty, confidence, and purpose.
+                  To cultivate a boutique experience where every klient is seen, valued, and kelebrated as the beautifully unique individual God created them to be — because each person is &ldquo;fearfully and wonderfully made&rdquo; (Psalm 139:14). Kae&apos;s Kloset exists to reflect this truth through kurated wardrobe experiences that highlight each klient&apos;s God-given beauty, konfidence, and purpose.
                 </p>
               </div>
             </FadeUp>
@@ -604,10 +604,10 @@ export default function KlosetSite() {
                 <h3 className="text-2xl font-semibold mb-1" style={{ color: "var(--text-primary)" }}>Kaelyn Charles</h3>
                 <p className="text-sm tracking-wide mb-6" style={{ color: "var(--lavender-light)" }}>Founder &amp; Owner · Kae&apos;s Kloset</p>
                 <p className="leading-relaxed mb-6" style={{ color: "var(--text-muted)" }}>
-                  Kaelyn Charles is more than a stylist — she is an answered prayer to every client she serves. With an eye for detail, a heart for people, and a gift for transformation, Kaelyn built Kae&apos;s Kloset on the belief that every person is &ldquo;fearfully and wonderfully made.&rdquo;
+                  Kaelyn Charles is more than a stylist — she is an answered prayer to every klient she serves. With an eye for detail, a heart for people, and a gift for transformation, Kaelyn built Kae&apos;s Kloset on the belief that every person is &ldquo;fearfully and wonderfully made.&rdquo;
                 </p>
                 <p className="leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
-                  From curated outfit sessions to full boutique experiences, she approaches every engagement as a calling — not just a service. Her boutique is a space where confidence, creativity, and individuality are always celebrated.
+                  From kurated outfit sessions to full boutique experiences, she approaches every engagement as a calling — not just a service. Her boutique is a space where konfidence, kreativity, and individuality are always kelebrated.
                 </p>
                 <div className="flex flex-wrap gap-4 text-sm" style={{ color: "var(--text-muted)" }}>
                   <a href="mailto:kaeskustomkloset@gmail.com" className="flex items-center gap-2 transition-colors" style={{ color: "var(--text-muted)" }}
@@ -813,7 +813,7 @@ export default function KlosetSite() {
               Lavender Luxe Looks
             </h2>
             <p className="text-center text-sm mb-6" style={{ color: "var(--text-muted)" }}>
-              Our curated aesthetic — lavender, gold, and everything elevated.
+              Our kurated aesthetic — lavender, gold, and everything elevated.
             </p>
             <div className="flex justify-center mb-16">
               <a
@@ -839,7 +839,7 @@ export default function KlosetSite() {
               { span: "col-span-1", height: "420px", label: "Streetwear",      src: "/work/look-01.jpg" },
               { span: "col-span-1", height: "420px", label: "Y2K",             src: "/work/look-02.jpg" },
               { span: "col-span-1", height: "420px", label: "Pinstripe Power", src: "/work/look-03.jpg" },
-              { span: "col-span-2 md:col-span-3", height: "340px", label: "Casual Luxe", src: "/work/look-04.png" },
+              { span: "col-span-2 md:col-span-3", height: "340px", label: "Kasual Luxe", src: "/work/look-04.png" },
             ].map((cell, i) => (
               <FadeUp key={i} delay={i * 0.06}>
                 <div
@@ -901,7 +901,7 @@ export default function KlosetSite() {
       <section id="testimonials" className="py-24 px-6" style={{ background: "var(--bg-base)" }}>
         <div className="max-w-5xl mx-auto">
           <FadeUp>
-            <p className="text-xs tracking-[0.2em] uppercase text-center mb-4" style={{ color: "var(--lavender-light)" }}>What Clients Say</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-center mb-4" style={{ color: "var(--lavender-light)" }}>What Klients Say</p>
             <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-center mb-4" style={{ color: "var(--text-primary)" }}>
               Testimonials
             </h2>
