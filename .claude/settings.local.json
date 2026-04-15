@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(convert --version)",
+      "Bash(node -e \"require\\('sharp'\\)\")",
+      "Bash(node:*)",
+      "Bash(gh auth:*)",
+      "Bash(vercel --version)",
+      "Bash(cp /Users/sunbelt/Downloads/P1@4x.png /Users/sunbelt/kaes-kloset/public/logo-lavender.png)",
+      "Bash(cp /Users/sunbelt/Downloads/P2@4x.png /Users/sunbelt/kaes-kloset/public/logo-charcoal.png)",
+      "Bash(cp /Users/sunbelt/Downloads/P3@4x.png /Users/sunbelt/kaes-kloset/public/logo-gold.png)",
+      "Bash(python3:*)",
+      "Bash(npx next:*)",
+      "WebFetch(domain:tlcministries.net)",
+      "WebFetch(domain:www.tlcministries.net)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(cp \"/Users/sunbelt/Downloads/Kae's Headshot.jpeg\" /Users/sunbelt/kaes-kloset/public/team/kaelyn-charles.jpg)",
+      "Bash(cp \"/Users/sunbelt/Downloads/Abrielle Lewis Headhsot.jpeg\" /Users/sunbelt/kaes-kloset/public/team/abrielle-lewis.jpg)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

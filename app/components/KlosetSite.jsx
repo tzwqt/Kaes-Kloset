@@ -78,14 +78,54 @@ const team = [
     bio: "Kaelyn is the visionary behind Kae's Kloset — a stylist, entrepreneur, and answered prayer to every client she serves. Her mission: confidence, style, and transformation.",
     image: "/team/kaelyn-charles.jpg",
   },
-  { name: "Abena Pokua", role: "Chief Operating Officer", image: "/team/abena-pokua.png" },
-  { name: "AJ Charles", role: "Chief Finance Officer", image: "/team/aj-charles.png" },
-  { name: "Abrielle Lewis", role: "Chief of Staff", image: "/team/abrielle-lewis.jpg" },
-  { name: "Jada Edwards", role: "Hair Salon Owner / Co-Partner", image: "/team/jada-edwards.jpg" },
-  { name: "Tiffany Charles", role: "Human Resources", image: "/team/tiffany-charles.jpg" },
-  { name: "Damaris Young", role: "Executive Creative Director", image: "/team/damaris-young.png" },
-  { name: "Ja'Lynn Manson", role: "Head Stylist Consultant", image: "/team/jalynn-manson.jpg" },
-  { name: "Kayla Charles", role: "Graphics", image: "/team/kayla-charles.png" },
+  {
+    name: "Abena Pokua",
+    role: "Chief Operating Officer",
+    bio: "Abena Pokua serves as the Chief Operating Officer of Kae's Kloset, a brand dedicated to empowering individuals to discover confidence through personal style. In this role, she oversees internal operations by ensuring clear, accurate communication across all channels while managing backend processes to support efficiency and organizational excellence.",
+    image: "/team/abena-pokua.png",
+  },
+  {
+    name: "AJ Charles",
+    role: "Chief Finance Officer",
+    bio: "Andre Charles Jr. serves as the Chief Financial Officer of Kae's Kloset, where he oversees financial strategy, budgeting, and long-term growth planning. With a sharp eye for detail and a commitment to excellence, he ensures the brand operates with integrity, sustainability, and financial strength.",
+    image: "/team/aj-charles.png",
+  },
+  {
+    name: "Abrielle Lewis",
+    role: "Chief of Staff",
+    bio: "As Chief of Staff for Kae's Kloset, I serve as a strategic partner in driving vision and execution across the brand. I align leadership, streamline operations, and ensure clarity in day-to-day functions helping turn ideas into action while supporting a mission rooted in confidence, creativity, and community impact.",
+    image: "/team/abrielle-lewis.jpg",
+  },
+  {
+    name: "Jada Edwards",
+    role: "Hair Salon Owner / Co-Partner",
+    bio: "Jada is the CEO of HolyHands.Co — a stylist and entrepreneur dedicated to helping others feel confident in their natural beauty. She is also a Co-Partner of Kae's Kloset, supporting the brand's vision of style, empowerment, and transformation. Her mission is to inspire confidence and purpose in everyone she serves.",
+    image: "/team/jada-edwards.jpg",
+  },
+  {
+    name: "Tiffany Charles",
+    role: "Human Resources Director",
+    bio: "As the Human Resources Director for Kae's Kloset, I bring a strategic and people-centered approach to cultivating a strong, values-driven workplace. I am passionate about developing talent and fostering organizational excellence, overseeing all aspects of employee engagement, recruitment, and professional development. I am committed to building a culture that empowers individuals, promotes integrity, and aligns with the vision and growth of the Kae Kloset brand.",
+    image: "/team/tiffany-charles.jpg",
+  },
+  {
+    name: "Damaris Young",
+    role: "Executive Creative Director",
+    bio: "Damaris is the Executive Creative Director of Kae's Kloset, building a fashion-forward brand that empowers confidence, creativity, and individuality while creating meaningful impact in the community.",
+    image: "/team/damaris-young.png",
+  },
+  {
+    name: "Ja'Lynn Manson",
+    role: "Head Stylist Consultant",
+    bio: "Ja'Lynn is your Head Stylist Consultant and creative visionary. I believe styling is more than what you wear: it's how you show up. I help you step confidently into your God-given identity through intentional, elevated style. From head to toe, every detail is curated to bring out your inner beauty — so you feel like the royalty you are. More than fashion… it's transformation!",
+    image: "/team/jalynn-manson.jpg",
+  },
+  {
+    name: "Kayla Charles",
+    role: "Photographer",
+    bio: "Kayla is a freelance, partnered photographer who captures the essence of Kae's Kloset through intentional, storytelling imagery. She believes every person carries a unique beauty worth highlighting. Kayla's goal isn't just to take photos, but to create an experience where clients feel seen, confident, and celebrated, resulting in images that authentically reflect who they truly are.",
+    image: "/team/kayla-charles.png",
+  },
 ];
 
 const testimonials = [
