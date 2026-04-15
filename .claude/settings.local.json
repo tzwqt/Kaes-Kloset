@@ -22,7 +22,8 @@
       "Bash(cp '/Users/sunbelt/Downloads/IMG_7531.JPEG' /Users/sunbelt/kaes-kloset/public/work/look-02.jpg)",
       "Bash(sips *)",
       "Bash(cp '/Users/sunbelt/Downloads/IMG_7453.JPG' /Users/sunbelt/kaes-kloset/public/work/look-03.jpg)",
-      "Bash(cp '/Users/sunbelt/Downloads/05618BA1-3FEB-4B82-8265-22D273396096.PNG' /Users/sunbelt/kaes-kloset/public/work/look-04.png)"
+      "Bash(cp '/Users/sunbelt/Downloads/05618BA1-3FEB-4B82-8265-22D273396096.PNG' /Users/sunbelt/kaes-kloset/public/work/look-04.png)",
+      "Bash(xxd)"
     ]
   }
 }
