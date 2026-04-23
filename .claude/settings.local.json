@@ -23,7 +23,16 @@
       "Bash(sips *)",
       "Bash(cp '/Users/sunbelt/Downloads/IMG_7453.JPG' /Users/sunbelt/kaes-kloset/public/work/look-03.jpg)",
       "Bash(cp '/Users/sunbelt/Downloads/05618BA1-3FEB-4B82-8265-22D273396096.PNG' /Users/sunbelt/kaes-kloset/public/work/look-04.png)",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Bash(cp '/Users/sunbelt/Downloads/IMG_8793.JPG' /Users/sunbelt/kaes-kloset/public/work/look-05.jpg)",
+      "Bash(cp '/Users/sunbelt/Downloads/IMG_8740.JPG' /Users/sunbelt/kaes-kloset/public/work/look-06.jpg)",
+      "Bash(cp '/Users/sunbelt/Downloads/IMG_8818.JPEG' /Users/sunbelt/kaes-kloset/public/work/look-07.jpg)",
+      "Bash(cp '/Users/sunbelt/Downloads/IMG_8882.JPEG' /Users/sunbelt/kaes-kloset/public/work/look-08.jpg)",
+      "Bash(cp '/Users/sunbelt/Downloads/IMG_9013.JPG' /Users/sunbelt/kaes-kloset/public/work/look-09.jpg)",
+      "Bash(ffmpeg -version)",
+      "Bash(avconvert --help)",
+      "Bash(avconvert -h)",
+      "Bash(avconvert *)"
     ]
   }
 }

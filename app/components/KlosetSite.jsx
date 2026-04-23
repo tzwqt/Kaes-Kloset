@@ -105,7 +105,7 @@ const team = [
     role: "Hair Salon Owner / Co-Partner",
     bio: "I'm the CEO of HolyHands.Co — a stylist and entrepreneur dedicated to helping others feel confident in their natural beauty. I'm also a Co-Partner of Kae's Kloset, supporting the brand's vision of style, empowerment, and transformation. My mission is to inspire confidence and purpose in everyone I serve.",
     image: "/team/jada-edwards.jpg",
-    instagram: "#",
+    instagram: "https://instagram.com/HolyHands.co",
   },
   {
     name: "Tiffany Charles",
@@ -126,14 +126,14 @@ const team = [
     role: "Head Stylist Consultant",
     bio: "I'm your Head Stylist Konsultant and kreative visionary. I believe styling is more than what you wear: it's how you show up. I help you step confidently into your God-given identity through intentional, elevated style. From head to toe, every detail is kurated to bring out your inner beauty — so you feel like the royalty you are. More than fashion… it's transformation!",
     image: "/team/jalynn-manson.jpg",
-    instagram: "#",
+    instagram: "https://instagram.com/_createdbyatb",
   },
   {
     name: "Kayla Charles",
     role: "Photographer",
     bio: "I'm a freelance, partnered photographer who captures the essence of Kae's Kloset through intentional, storytelling imagery. I believe every person carries a unique beauty worth highlighting. My goal isn't just to take photos, but to create an experience where klients feel seen, konfident, and kelebrated — resulting in images that authentically reflect who they truly are.",
     image: "/team/kayla-charles.png",
-    instagram: "#",
+    instagram: "https://instagram.com/kingdom.visionphotos",
   },
 ];
 
@@ -574,28 +574,13 @@ export default function KlosetSite() {
 
             {/* ── Welcome Video ── */}
             <FadeUp delay={0.1}>
-              {/* TODO: Replace this placeholder with an <iframe> embed once Kaelyn shares her video link */}
-              <div
-                style={{ ...card, borderTop: "2px solid var(--gold)", position: "relative", overflow: "hidden" }}
-                className="w-full rounded-2xl aspect-video flex items-center justify-center"
-              >
-                <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, var(--bg-raised) 60%, var(--lavender-dim))" }} />
-                {/* Decorative corner sparkles */}
-                <span className="absolute top-4 left-5 text-sm pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.4 }}>✦</span>
-                <span className="absolute bottom-4 right-5 text-xs pointer-events-none select-none" style={{ color: "var(--gold)", opacity: 0.3 }}>◈</span>
-                <div className="relative flex flex-col items-center gap-4">
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center"
-                    style={{ background: "var(--gold)", boxShadow: "0 0 32px var(--gold-dim)" }}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
-                      <polygon points="5 3 19 12 5 21 5 3" />
-                    </svg>
-                  </div>
-                  <p className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>Welcome from Kaelyn</p>
-                  <p className="text-xs tracking-[0.15em] uppercase" style={{ color: "var(--text-faint)" }}>Video coming soon</p>
-                </div>
-              </div>
+              <video
+                src="/welcome.mp4"
+                controls
+                playsInline
+                className="w-full rounded-2xl"
+                style={{ borderTop: "2px solid var(--gold)", display: "block" }}
+              />
             </FadeUp>
 
             {/* ── Bio ── */}
@@ -820,6 +805,13 @@ export default function KlosetSite() {
               { span: "col-span-1", height: "420px", label: "Y2K",             src: "/work/look-02.jpg" },
               { span: "col-span-1", height: "420px", label: "Pinstripe Power", src: "/work/look-03.jpg" },
               { span: "col-span-2 md:col-span-3", height: "340px", label: "Kasual Luxe", src: "/work/look-04.png" },
+              { span: "col-span-1", height: "420px", label: "Birthday Glam",   src: "/work/look-05.jpg" },
+              { span: "col-span-1", height: "420px", label: "21st Luxe",       src: "/work/look-06.jpg" },
+              { span: "col-span-1", height: "420px", label: "Rose Luxe",       src: "/work/look-07.jpg" },
+              { span: "col-span-1", height: "420px", label: "Kamo Kool",       src: "/work/look-08.jpg" },
+              { span: "col-span-1", height: "420px", label: "Neon Drip",       src: "/work/look-09.jpg" },
+              { span: "col-span-1", height: "420px", label: "Kourt Kween",     src: "/work/look-10.jpg", objPos: "center center" },
+              { span: "col-span-2 md:col-span-3", height: "340px", label: "Neon Edit", src: "/work/look-11.jpg", objPos: "center center" },
             ].map((cell, i) => (
               <FadeUp key={i} delay={i * 0.06}>
                 <div
@@ -831,7 +823,7 @@ export default function KlosetSite() {
                       src={cell.src}
                       alt={cell.label}
                       fill
-                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                      style={{ objectFit: "cover", objectPosition: cell.objPos ?? "center top" }}
                       sizes="(max-width: 768px) 50vw, 33vw"
                     />
                   ) : (
