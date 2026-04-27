@@ -575,7 +575,7 @@ export default function KlosetSite() {
             {/* ── Welcome Video ── */}
             <FadeUp delay={0.1}>
               <video
-                src="/welcome.mp4"
+                src="/welcome.mov"
                 controls
                 playsInline
                 className="w-full rounded-2xl"
@@ -804,14 +804,14 @@ export default function KlosetSite() {
               { span: "col-span-1", height: "420px", label: "Streetwear",      src: "/work/look-01.jpg" },
               { span: "col-span-1", height: "420px", label: "Y2K",             src: "/work/look-02.jpg" },
               { span: "col-span-1", height: "420px", label: "Pinstripe Power", src: "/work/look-03.jpg" },
-              { span: "col-span-2 md:col-span-3", height: "340px", label: "Kasual Luxe", src: "/work/look-04.png" },
+              { span: "col-span-1", height: "420px", label: "Kasual Luxe",     src: "/work/look-04.png" },
               { span: "col-span-1", height: "420px", label: "Birthday Glam",   src: "/work/look-05.jpg" },
               { span: "col-span-1", height: "420px", label: "21st Luxe",       src: "/work/look-06.jpg" },
               { span: "col-span-1", height: "420px", label: "Rose Luxe",       src: "/work/look-07.jpg" },
               { span: "col-span-1", height: "420px", label: "Kamo Kool",       src: "/work/look-08.jpg" },
               { span: "col-span-1", height: "420px", label: "Neon Drip",       src: "/work/look-09.jpg" },
               { span: "col-span-1", height: "420px", label: "Kourt Kween",     src: "/work/look-10.jpg", objPos: "center center" },
-              { span: "col-span-2 md:col-span-3", height: "340px", label: "Neon Edit", src: "/work/look-11.jpg", objPos: "center center" },
+              { span: "col-span-1", height: "420px", label: "Neon Edit",       src: "/work/look-11.jpg", objPos: "center center" },
             ].map((cell, i) => (
               <FadeUp key={i} delay={i * 0.06}>
                 <div
