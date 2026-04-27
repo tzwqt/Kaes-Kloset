@@ -597,7 +597,6 @@ export default function KlosetSite() {
                 src="/welcome.mov"
                 controls
                 playsInline
-                muted
                 className="w-full rounded-2xl"
                 style={{ borderTop: "2px solid var(--gold)", display: "block" }}
               />
