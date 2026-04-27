@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Script from "next/script";
 import Image from "next/image";
@@ -246,6 +246,24 @@ export default function KlosetSite() {
     service: "", message: "",
   });
   const [stylePrefs, setStylePrefs] = useState([]);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   const styleOptions = ["Casual", "Elegant", "Bold", "Minimalist", "Trendy", "Sexy", "Streetwear", "Business Chic"];
 
@@ -575,9 +593,11 @@ export default function KlosetSite() {
             {/* ── Welcome Video ── */}
             <FadeUp delay={0.1}>
               <video
+                ref={videoRef}
                 src="/welcome.mov"
                 controls
                 playsInline
+                muted
                 className="w-full rounded-2xl"
                 style={{ borderTop: "2px solid var(--gold)", display: "block" }}
               />
