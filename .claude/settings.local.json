@@ -32,7 +32,9 @@
       "Bash(ffmpeg -version)",
       "Bash(avconvert --help)",
       "Bash(avconvert -h)",
-      "Bash(avconvert *)"
+      "Bash(avconvert *)",
+      "Bash(git checkout *)",
+      "WebFetch(domain:builds-by-tati.vercel.app)"
     ]
   }
 }

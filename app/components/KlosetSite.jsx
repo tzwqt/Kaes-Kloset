@@ -817,50 +817,65 @@ export default function KlosetSite() {
             </div>
           </FadeUp>
 
-          {/* Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+          {/* Grid — first 9 photos */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
             {[
-              { span: "col-span-1", height: "420px", label: "Streetwear",      src: "/work/look-01.jpg" },
-              { span: "col-span-1", height: "420px", label: "Birthday Glam",   src: "/work/look-05.jpg" },
-              { span: "col-span-1", height: "420px", label: "Kamo Kool",       src: "/work/look-08.jpg" },
-              { span: "col-span-1", height: "420px", label: "21st Luxe",       src: "/work/look-06.jpg" },
-              { span: "col-span-1", height: "420px", label: "Neon Drip",       src: "/work/look-09.jpg" },
-              { span: "col-span-1", height: "420px", label: "Y2K",             src: "/work/look-02.jpg" },
-              { span: "col-span-1", height: "420px", label: "Kourt Kween",     src: "/work/look-10.jpg", objPos: "center center" },
-              { span: "col-span-1", height: "420px", label: "Pinstripe Power", src: "/work/look-03.jpg" },
-              { span: "col-span-1", height: "420px", label: "Rose Luxe",       src: "/work/look-07.jpg" },
-              { span: "col-span-1", height: "420px", label: "Kasual Luxe",     src: "/work/look-04.png" },
-              { span: "col-span-1", height: "420px", label: "Neon Edit",       src: "/work/look-11.jpg", objPos: "center center" },
+              { height: "420px", label: "Streetwear",      src: "/work/look-01.jpg" },
+              { height: "420px", label: "Birthday Glam",   src: "/work/look-05.jpg" },
+              { height: "420px", label: "Kamo Kool",       src: "/work/look-08.jpg" },
+              { height: "420px", label: "21st Luxe",       src: "/work/look-06.jpg" },
+              { height: "420px", label: "Neon Drip",       src: "/work/look-09.jpg" },
+              { height: "420px", label: "Y2K",             src: "/work/look-02.jpg" },
+              { height: "420px", label: "Pinstripe Power", src: "/work/look-03.jpg" },
+              { height: "420px", label: "Rose Luxe",       src: "/work/look-07.jpg" },
+              { height: "420px", label: "Kasual Luxe",     src: "/work/look-04.png" },
             ].map((cell, i) => (
               <FadeUp key={i} delay={i * 0.06}>
                 <div
                   style={{ ...card, position: "relative", overflow: "hidden", height: cell.height }}
-                  className={`rounded-xl flex items-end ${cell.span}`}
+                  className="rounded-xl flex items-end"
                 >
-                  {cell.src ? (
-                    <Image
-                      src={cell.src}
-                      alt={cell.label}
-                      fill
-                      style={{ objectFit: "cover", objectPosition: cell.objPos ?? "center top" }}
-                      sizes="(max-width: 768px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-faint)" strokeWidth="1.2">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <polyline points="21 15 16 10 5 21"/>
-                      </svg>
-                    </div>
-                  )}
+                  <Image
+                    src={cell.src}
+                    alt={cell.label}
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "center top" }}
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
                   <div className="relative w-full px-4 py-3" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 60%, transparent)" }}>
-                    <p className="text-[10px] tracking-[0.15em] uppercase" style={{ color: cell.src ? "#fff" : "var(--gold)" }}>{cell.label}</p>
+                    <p className="text-[10px] tracking-[0.15em] uppercase" style={{ color: "#fff" }}>{cell.label}</p>
                   </div>
                 </div>
               </FadeUp>
             ))}
           </div>
+
+          {/* Bottom two — centered window */}
+          <FadeUp delay={0.55} className="mb-16">
+            <div className="grid grid-cols-2 gap-4 md:w-2/3 mx-auto">
+              {[
+                { height: "420px", label: "Kourt Kween", src: "/work/look-10.jpg", objPos: "center center" },
+                { height: "420px", label: "Neon Edit",   src: "/work/look-11.jpg", objPos: "center center" },
+              ].map((cell, i) => (
+                <div
+                  key={i}
+                  style={{ ...card, position: "relative", overflow: "hidden", height: cell.height }}
+                  className="rounded-xl flex items-end"
+                >
+                  <Image
+                    src={cell.src}
+                    alt={cell.label}
+                    fill
+                    style={{ objectFit: "cover", objectPosition: cell.objPos }}
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                  <div className="relative w-full px-4 py-3" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 60%, transparent)" }}>
+                    <p className="text-[10px] tracking-[0.15em] uppercase" style={{ color: "#fff" }}>{cell.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </FadeUp>
 
           {/* Monthly themes */}
           <FadeUp delay={0.2}>
