@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     icon: "/logo-lavender.png",
     apple: "/logo-lavender.png",
   },
+  openGraph: {
+    title: "Kae's Kloset",
+    description: "A boutique styling experience — appointment-based curation, curated outfit packs, and premium pieces. Fearfully & Wonderfully Styled.",
+    images: [{ url: "/logo-lavender.png" }],
+  },
 };
 
 export default function RootLayout({
