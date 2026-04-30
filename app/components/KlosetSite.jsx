@@ -247,21 +247,21 @@ export default function KlosetSite() {
   });
   const [stylePrefs, setStylePrefs] = useState([]);
   const videoRef = useRef(null);
-  const userPausedRef = useRef(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+    video.muted = true;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          userPausedRef.current = false;
           video.play().catch(() => {});
         } else {
           video.pause();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
     observer.observe(video);
     return () => observer.disconnect();
@@ -271,12 +271,18 @@ export default function KlosetSite() {
     const video = videoRef.current;
     if (!video) return;
     if (video.paused) {
-      userPausedRef.current = false;
       video.play().catch(() => {});
     } else {
-      userPausedRef.current = true;
       video.pause();
     }
+  }
+
+  function toggleMute(e) {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
   }
 
   const styleOptions = ["Casual", "Elegant", "Bold", "Minimalist", "Trendy", "Sexy", "Streetwear", "Business Chic"];
@@ -606,15 +612,24 @@ export default function KlosetSite() {
 
             {/* ── Welcome Video ── */}
             <FadeUp delay={0.1}>
-              <video
-                ref={videoRef}
-                src="/welcome.mov"
-                loop
-                playsInline
-                onClick={handleVideoClick}
-                className="w-full rounded-2xl cursor-pointer"
-                style={{ borderTop: "2px solid var(--gold)", display: "block" }}
-              />
+              <div className="relative w-full rounded-2xl overflow-hidden" style={{ borderTop: "2px solid var(--gold)" }}>
+                <video
+                  ref={videoRef}
+                  src="/welcome.mov"
+                  loop
+                  playsInline
+                  onClick={handleVideoClick}
+                  className="w-full cursor-pointer block"
+                />
+                <button
+                  onClick={toggleMute}
+                  className="absolute bottom-3 right-3 flex items-center justify-center rounded-full w-9 h-9 text-sm transition-opacity"
+                  style={{ background: "rgba(0,0,0,0.55)", color: "#fff", border: "1px solid rgba(255,255,255,0.25)" }}
+                  aria-label={isMuted ? "Unmute" : "Mute"}
+                >
+                  {isMuted ? "🔇" : "🔊"}
+                </button>
+              </div>
             </FadeUp>
 
             {/* ── Bio ── */}
