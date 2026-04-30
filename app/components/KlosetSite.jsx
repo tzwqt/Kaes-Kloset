@@ -1039,6 +1039,7 @@ export default function KlosetSite() {
 
           {/* Copyright */}
           <p className="text-xs" style={{ color: "var(--text-faint)" }}>© 2026 Kae&apos;s Kloset. All rights reserved.</p>
+          <p className="text-xs mt-1" style={{ color: "var(--text-faint)" }}>Designed &amp; built by <span style={{ color: "var(--lavender-light)" }}>Tati</span></p>
         </div>
       </footer>
 

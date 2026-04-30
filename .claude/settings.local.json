@@ -34,7 +34,10 @@
       "Bash(avconvert -h)",
       "Bash(avconvert *)",
       "Bash(git checkout *)",
-      "WebFetch(domain:builds-by-tati.vercel.app)"
+      "WebFetch(domain:builds-by-tati.vercel.app)",
+      "Bash(git *)",
+      "Bash(./node_modules/.bin/next build *)",
+      "Bash(npm install *)"
     ]
   }
 }
