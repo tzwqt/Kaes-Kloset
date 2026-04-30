@@ -247,6 +247,7 @@ export default function KlosetSite() {
   });
   const [stylePrefs, setStylePrefs] = useState([]);
   const videoRef = useRef(null);
+  const userPausedRef = useRef(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -254,6 +255,7 @@ export default function KlosetSite() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          userPausedRef.current = false;
           video.play().catch(() => {});
         } else {
           video.pause();
@@ -264,6 +266,18 @@ export default function KlosetSite() {
     observer.observe(video);
     return () => observer.disconnect();
   }, []);
+
+  function handleVideoClick() {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      userPausedRef.current = false;
+      video.play().catch(() => {});
+    } else {
+      userPausedRef.current = true;
+      video.pause();
+    }
+  }
 
   const styleOptions = ["Casual", "Elegant", "Bold", "Minimalist", "Trendy", "Sexy", "Streetwear", "Business Chic"];
 
@@ -595,9 +609,10 @@ export default function KlosetSite() {
               <video
                 ref={videoRef}
                 src="/welcome.mov"
-                controls
+                loop
                 playsInline
-                className="w-full rounded-2xl"
+                onClick={handleVideoClick}
+                className="w-full rounded-2xl cursor-pointer"
                 style={{ borderTop: "2px solid var(--gold)", display: "block" }}
               />
             </FadeUp>
