@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kae's Kloset",
   description: "A boutique styling experience — appointment-based curation, curated outfit packs, and premium pieces. Fearfully & Wonderfully Styled.",
+  icons: {
+    icon: "/logo-lavender.png",
+    apple: "/logo-lavender.png",
+  },
 };
 
 export default function RootLayout({
