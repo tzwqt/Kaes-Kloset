@@ -856,7 +856,7 @@ export default function KlosetSite() {
               { height: "420px", label: "21st Luxe",       src: "/work/look-06.jpg" },
               { height: "420px", label: "Neon Drip",       src: "/work/look-09.jpg" },
               { height: "420px", label: "Y2K",             src: "/work/look-02.jpg" },
-              { height: "420px", label: "Pinstripe Power", src: "/work/look-03.jpg" },
+              { height: "420px", label: "Pinstripe Power", src: "/work/look-10.jpg", objPos: "center center" },
               { height: "420px", label: "Rose Luxe",       src: "/work/look-07.jpg" },
               { height: "420px", label: "Kasual Luxe",     src: "/work/look-04.png" },
             ].map((cell, i) => (
@@ -884,7 +884,7 @@ export default function KlosetSite() {
           <FadeUp delay={0.55} className="mb-16">
             <div className="grid grid-cols-2 gap-4 md:w-2/3 mx-auto">
               {[
-                { height: "420px", label: "Kourt Kween", src: "/work/look-10.jpg", objPos: "center center" },
+                { height: "420px", label: "Kourt Kween", src: "/work/look-03.jpg" },
                 { height: "420px", label: "Neon Edit",   src: "/work/look-11.jpg", objPos: "center center" },
               ].map((cell, i) => (
                 <div
